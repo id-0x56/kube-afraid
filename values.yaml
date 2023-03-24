@@ -8,13 +8,13 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
+cronjob:
+  schedule: "*/5 * * * *"
+  annotations: {}
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 3
+  successfulJobsHistoryLimit: 1
+  restartPolicy: OnFailure
+
 afraid:
   token: "QmVTMzZWVmdnbmlCdG1WbHQzbGM6MTk5NDU0NTU"
-
-  cronjob:
-    schedule: "*/5 * * * *"
-    annotations: {}
-    concurrencyPolicy: Forbid
-    failedJobsHistoryLimit: 3
-    successfulJobsHistoryLimit: 1
-    restartPolicy: OnFailure

@@ -31,7 +31,7 @@ spec:
             - name: {{ .Chart.Name }}
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
               imagePullPolicy: {{ .Values.image.pullPolicy }}
-              command: [ "/bin/sh", "-c", "/usr/bin/curl -ks https://freedns.afraid.org/dynamic/update.php?$(afraid-token)" ]
+              command: [ "/bin/sh", "-c", "/usr/bin/curl -s http://sync.afraid.org/u/$(afraid-token)/" ]
               env:
                 - name: afraid-token
                   valueFrom:
